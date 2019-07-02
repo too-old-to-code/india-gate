@@ -103,7 +103,7 @@ class ContactUs extends Component {
 
   render() {
     console.log('props:', this.props)
-    console.log('window:', window.google)
+    // console.log('window:', window.google)
     // console.log('react:', GoogleMapReact() )
     if (!location) return
     const { lat, lng } = location
