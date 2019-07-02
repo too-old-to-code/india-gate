@@ -1,0 +1,76 @@
+// .dining-in {
+//   display: none;
+// }
+
+// .item-description {
+//   display: inline-block;
+// }
+
+// h4.item-name, .item-price {
+//   font-size: 15px;
+//   display: inline-block;
+//   margin: 2px 0;
+// }
+
+// .item-price {
+//   font-size: 14px;
+//   font-weight: bold;
+// }
+
+
+// table {
+//   font-size: 12px;
+//   margin: 0 10px;
+
+//   tr {
+//     padding-top: 3px;
+
+//   }
+
+//   td {
+//     min-width: 120px;
+//     text-align: left;
+//   }
+
+//   td:nth-child(3) {
+//     text-align: right;
+//     overflow: hidden;
+//   }
+// }
+//
+
+
+
+.item-price {
+  min-width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+}
+
+.item-name {
+  font-size: 14px;
+  margin: 0;
+}
+
+.food-menu {
+  margin: 4px;
+  text-align: center;
+}
+
+.menu-item {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  // flex-direction: column;
+  // width: 100%;
+  font-size: 12px;
+  // margin-top: 4px;
+  padding: 4px;
+  padding-top: 6px;
+  background-color: #f1f1f1;
+
+  &.even {
+    background-color: beige;
+  }
+}

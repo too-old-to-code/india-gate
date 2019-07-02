@@ -1,52 +1,45 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import './layout.scss'
+import React, {useState} from 'react'
+import BurgerMenu from '../reusable/burger-menu'
+import BurgerMenuList from '../reusable/burger-menu-list'
+import withAppearOnScroll from '../reusable/with-appear-on-scroll'
+import CallButton from '../reusable/call-button'
+import ComposedMenu from '../reusable/composed-menu'
+// const MenuContext = React.createContext({})
+// export const MenuProvider = MenuContext.Provider
+// export const MenuConsumer = MenuContext.Consumer
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+const Layout = ({children}) => {
+  let BurgerMenuOnScrollUp = withAppearOnScroll(BurgerMenu, 'up')
+  let CallButtonOnScrollDown = withAppearOnScroll(CallButton, 'down')
+  // const [val, toggle] = useState('test')
 
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+      // <BurgerMenuList/>
+      // <BurgerMenu test="othertezt"/>
+      // <BurgerMenuOnScrollUp
+      //   initialPosition={{
+      //     top: 0,
+      //     left: 0,
+      //     transform: 'translateY(-50px)',
+      //     width: '50px',
+      //     height: '50px'
+      //   }}
+      //   test={val}
+      // />
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
+    <React.Fragment>
+      <ComposedMenu />
+      <CallButtonOnScrollDown
+        initialPosition={{
+          bottom: 0,
+          transform: 'translateY(50px)',
+          width: '100%',
+          height: '50px'
         }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      />
+      {children}
+    </React.Fragment>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

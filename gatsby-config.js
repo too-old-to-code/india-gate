@@ -6,11 +6,23 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: '@fika/gatsby-source-cockpit',
+      options: {
+        token: 'account-517610af4a24db667c98951d878e37',
+        baseUrl:
+          'http://139.59.185.0', // (1)
+        locales: [], // (2)
+        collections: [], // (3)
+        brokenImageReplacement: null // (4)
       },
     },
     `gatsby-transformer-sharp`,

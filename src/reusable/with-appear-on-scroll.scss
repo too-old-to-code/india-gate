@@ -1,0 +1,12 @@
+.appear-on-scroll {
+  position: fixed;
+  color: white;
+  opacity: 0;
+  transition: transform 0.2s, opacity 0s .2s;
+  z-index: 30;
+
+  &.visible {
+    transition: transform 0.2s;
+    opacity: 1;
+  }
+}
