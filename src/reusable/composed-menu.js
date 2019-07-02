@@ -7,7 +7,7 @@ import withAppearOnScroll from './with-appear-on-scroll'
 const ComposedMenu = () => {
   let BurgerMenuOnScrollUp = withAppearOnScroll(BurgerMenu, 'up')
   const [isActive, toggleActive] = useState(false)
-  if (document) {
+  if (typeof document !== 'undefined') {
     if (isActive) {
       document.body.style.overflow = 'hidden'
     } else {
