@@ -16,10 +16,8 @@ const ComposedMenu = () => {
   useEffect(() => {
     let targetElement = document.querySelector('.sidebar-menu')
     if (isActive) {
-      // document.body.style.overflow = 'hidden'
       disableBodyScroll(targetElement)
     } else {
-      // document.body.style.overflow = 'scroll'
       enableBodyScroll(targetElement)
     }
     return () => {
@@ -29,8 +27,8 @@ const ComposedMenu = () => {
 
   return (
     <>
-      <BurgerMenuList isActive={isActive} />
-      <BurgerMenuOnScrollUp
+      <BurgerMenuList isActive={isActive} toggleActive={toggleActive} />
+      {/*<BurgerMenuOnScrollUp
         initialPosition={{
           top: 0,
           left: 0,
@@ -42,7 +40,7 @@ const ComposedMenu = () => {
         }}
         toggleActive={toggleActive}
         isActive={isActive}
-      />
+      />*/}
       <BurgerMenu toggleActive={toggleActive} isActive={isActive}/>
     </>
   )
