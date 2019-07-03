@@ -2,6 +2,11 @@ import React, {useState, useEffect} from 'react'
 import BurgerMenu from './burger-menu'
 import BurgerMenuList from './burger-menu-list'
 import withAppearOnScroll from './with-appear-on-scroll'
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks
+} from 'body-scroll-lock';
 
 
 const ComposedMenu = () => {
@@ -9,10 +14,16 @@ const ComposedMenu = () => {
   const [isActive, toggleActive] = useState(false)
 
   useEffect(() => {
+    let targetElement = document.querySelector('.sidebar-menu')
     if (isActive) {
-      document.body.style.overflow = 'hidden'
+      // document.body.style.overflow = 'hidden'
+      disableBodyScroll(targetElement)
     } else {
-      document.body.style.overflow = 'scroll'
+      // document.body.style.overflow = 'scroll'
+      enableBodyScroll(targetElement)
+    }
+    return () => {
+      clearAllBodyScrollLocks()
     }
   })
 
