@@ -1,0 +1,66 @@
+.food-hygiene-rating {
+  height: 115px;
+  width: 222px;
+  background-color: #d6e457;
+  border: 2px black solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.heading {
+  text-align: center;
+  border-bottom: 2px solid black;
+  height: 20px;
+  line-height: 20px;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+}
+
+.rating-number {
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.rating-text {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.active-rating {
+  background-color: black;
+  font-size: 2em;
+  color: white;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    border: 10px solid transparent;
+    border-top: 10px black solid;
+    position: absolute;
+    left: 10px;
+    top: -17px;
+
+
+  }
+}

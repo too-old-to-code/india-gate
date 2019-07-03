@@ -37,7 +37,8 @@ const ComposedMenu = () => {
           transform: 'translateY(-50px)',
           width: '50px',
           height: '50px',
-          zIndex: '20'
+          zIndex: '20',
+          backgroundColor: 'rgba(0, 0, 0, 0.6)'
         }}
         toggleActive={toggleActive}
         isActive={isActive}

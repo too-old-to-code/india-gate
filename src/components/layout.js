@@ -9,7 +9,7 @@ import ComposedMenu from '../reusable/composed-menu'
 // export const MenuProvider = MenuContext.Provider
 // export const MenuConsumer = MenuContext.Consumer
 
-const Layout = ({children}) => {
+const Layout = ({children, callButton = true}) => {
   let BurgerMenuOnScrollUp = withAppearOnScroll(BurgerMenu, 'up')
   let CallButtonOnScrollDown = withAppearOnScroll(CallButton, 'down')
   // const [val, toggle] = useState('test')
@@ -29,15 +29,20 @@ const Layout = ({children}) => {
   return (
     <React.Fragment>
       <ComposedMenu />
-      <CallButtonOnScrollDown
-        initialPosition={{
-          bottom: 0,
-          transform: 'translateY(50px)',
-          width: '100%',
-          height: '50px'
-        }}
-      />
+      {
+        callButton && <CallButtonOnScrollDown
+          initialPosition={{
+            bottom: 0,
+            transform: 'translateY(50px)',
+            width: '100%',
+            height: '50px'
+          }}
+        />
+      }
       {children}
+      {
+        callButton && <div style={{height: '50px'}}/>
+      }
     </React.Fragment>
   )
 }

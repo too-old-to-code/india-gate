@@ -29,7 +29,11 @@ const MenuItem = (props) => {
         <h6 className="item-name">{name && name.value}</h6>
         <div className="item-description">{description && description.value}</div>
       </div>
-      <div className="item-price">{priceIn && priceIn.value} / {priceOut && priceOut.value}</div>
+      <div className="item-price">
+        {priceIn && priceIn.value}
+        {priceIn && priceIn.value && priceOut && priceOut.value ? ' / ' : ''}
+        {priceOut && priceOut.value}
+      </div>
     </div>
   )
 }
