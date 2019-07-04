@@ -1,11 +1,19 @@
+import './our-menu.scss'
 import React from 'react'
-import Layout from '../components/layout'
+// import { graphql } from 'gatsby'
+// import Layout from '../components/layout'
 import FoodMenu from '../components/food-menu'
-import AnimateHeight from 'react-animate-height';
+// import AnimateHeight from 'react-animate-height'
+import SiteHeader from '../components/site-header'
 
-const OurMenu = () => {
+const OurMenu = ({data}) => {
+
+
   return (
-    <FoodMenu />
+    <div>
+      <SiteHeader heading="Our Menu" />
+      <FoodMenu />
+    </div>
   )
 }
 

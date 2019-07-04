@@ -2,13 +2,12 @@ import './about.scss'
 import React from 'react'
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-
-import Layout from "../components/layout"
+import SiteHeader from '../components/site-header'
 
 const AboutPage = ({ data }) => {
   return (
     <div>
-
+      <SiteHeader heading="About Us" />
       <Img
         fluid={data.cockpitAbout.picture_1.value.childImageSharp.fluid}
         style={{

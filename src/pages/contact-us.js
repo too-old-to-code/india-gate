@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react';
+import SiteHeader from '../components/site-header'
 
 let location = {
   lat: 51.51374,
@@ -49,6 +50,7 @@ class ContactUs extends Component {
   }
 
   createOptions (maps) {
+    console.log('maps:', maps)
     return {
       animation: true,
       animationControlOptions: {
@@ -79,6 +81,8 @@ class ContactUs extends Component {
 
     return (
       // Important! Always set the container height explicitly
+      <div>
+      <SiteHeader heading="Contact Us" />
       <div style={{ height: '300px', width: '100%', opacity: 1, transition: 'opacity 1s' }} key={lat}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyD7u4-qeH76DCRCGqlWBu5O9OuK_e45Ij0' }}
@@ -109,6 +113,7 @@ class ContactUs extends Component {
           <p>{location.number}</p>
           </div>
         </div>
+      </div>
       </div>
     );
   }

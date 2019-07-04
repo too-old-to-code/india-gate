@@ -1,11 +1,10 @@
 import './burger-menu.scss'
 import React, { useState } from 'react'
-import BurgerMenuList from '../reusable/burger-menu-list'
 
 const BurgerMenu = ({isActive, toggleActive}) => {
-  // console.log(toggleActive)
+
   const [isActivator, toggleActivator] = useState(false)
-  // console.log(props.test)
+
   return (
     <a
       href="#"

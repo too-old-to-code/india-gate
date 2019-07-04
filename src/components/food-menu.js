@@ -41,8 +41,9 @@ const MenuSubsection = ({node}) => {
             <AnimateHeight
               duration={ 300 }
               height={ open ? 'auto' : 0} // see props documentation bellow
+              key={item.id}
             >
-              <MenuItem item={item} key={item.id} index={index}/>
+              <MenuItem item={item}  index={index}/>
             </AnimateHeight>
           )
         })

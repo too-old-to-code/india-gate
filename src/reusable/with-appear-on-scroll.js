@@ -9,7 +9,6 @@ const SCROLL_HEIGHT = 400
 const withAppearOnScroll = (Component, direction) => {
 
   const style = ({initialPosition, isActive}, visible, scrollTop) => {
-    console.log(scrollTop)
     return visible || isActive && (scrollTop >= SCROLL_HEIGHT)
       ? { ...initialPosition, transform: 'translateX(0) translateY(0)'}
       : initialPosition
@@ -20,7 +19,6 @@ const withAppearOnScroll = (Component, direction) => {
     const [scrollTop, setScrollTop] = useState(0)
     const [visible, setVisible] = useState(false)
     // const [keepShowing, setKeepShowing] = useState(false)
-    console.log(props)
 
 
     const handleScroll = throttle(({target}) => {
@@ -30,7 +28,6 @@ const withAppearOnScroll = (Component, direction) => {
       } else {
         setVisible(currentScroll > SCROLL_HEIGHT && scrollTop > currentScroll)
       }
-      // console.log(scrollTop)
       // lastScrollTop = currentScroll
       setScrollTop(currentScroll)
     })
