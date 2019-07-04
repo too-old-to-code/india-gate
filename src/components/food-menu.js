@@ -9,19 +9,28 @@ const MenuSubsection = ({node}) => {
   const [open, toggleOpen] = useState(false)
 
   return (
-    <div key={node.id}>
+    <div key={node.id}
+      style={{
+        maxWidth: '100%',
+        overflow: 'hidden',
+        position: 'relative'
+      }}
+    >
       <h4
         onClick={() => toggleOpen(!open)}
         style={{
           display: 'inline-block',
-          padding: '15px 10px',
-          background: 'orange',
-          color: 'white',
+          padding: '15px 0px',
+          background: '#f8c40e',
+          color: 'rgb(253, 247, 229)',
           letterSpacing: '2px',
           textTransform: 'uppercase',
           boxShadow: '1px 1px 3px black',
-          width: '90%',
-          margin: '3px'
+          width: '100%',
+          margin: '3px 0',
+          textShadow: '0px 1px 2px black',
+          fontSize: '1.1em',
+          position: 'relative'
         }}
       >
         {node.heading.value}
