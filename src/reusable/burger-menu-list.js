@@ -19,13 +19,13 @@ const BurgerMenuList = ({isActive, toggleActive}) => {
           <Link to="/our-menu" className="pure-menu-link">Our Menu</Link>
         </li>
         <li className="pure-menu-item" onClick={doit}>
-          <a href="#" className="pure-menu-link">Gallery</a>
+          <Link to="/" className="pure-menu-link">Gallery</Link>
         </li>
         <li className="pure-menu-item" onClick={doit}>
           <Link to="/about" className="pure-menu-link">About us</Link>
         </li>
         <li className="pure-menu-item" onClick={doit}>
-          <Link to="contact-us" className="pure-menu-link">Contact us</Link>
+          <Link to="/contact-us" className="pure-menu-link">Contact us</Link>
         </li>
     </ul>
   </div>

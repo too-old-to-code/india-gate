@@ -19,6 +19,7 @@
 
 .pure-menu.is-active {
   transform: translateX(0);
+  transition: transform .2s;
 }
 
 @media screen and (min-width: 35.5em) {

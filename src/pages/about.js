@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 
 const AboutPage = ({ data }) => {
   return (
-    <Layout>
+    <div>
 
       <Img
         fluid={data.cockpitAbout.picture_1.value.childImageSharp.fluid}
@@ -25,7 +25,7 @@ const AboutPage = ({ data }) => {
           width: '100%'
         }}
       />
-    </Layout>
+    </div>
   )
 }
 

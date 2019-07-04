@@ -10,7 +10,6 @@ let location = {
   number: '(029) 20 611178 / 615347'
 }
 const AnyReactComponent = (props) => {
-  console.log('props:', props)
   return <div src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png" style={{
     position: 'absolute',
     transform: 'translate(-50%, -100%)'
@@ -40,19 +39,6 @@ const AnyReactComponent = (props) => {
 }
 
 
-// const ContactUs = () => {
-
-//   return (
-//     <div>hello</div>
-//   )
-// }
-
-// export default ContactUs
-
-// import React, { Component } from 'react';
-// import CraigEwersLogo from './logo'
-
-
 class ContactUs extends Component {
   constructor (props) {
     super(props)
@@ -63,7 +49,6 @@ class ContactUs extends Component {
   }
 
   createOptions (maps) {
-    console.log('maps:', maps)
     return {
       animation: true,
       animationControlOptions: {
@@ -82,29 +67,13 @@ class ContactUs extends Component {
     }
   }
 
-  // componentWillMount () {
-  //   const { lat, lng } = this.props.location
-  //   this.setState({
-  //     centre: {
-  //       lat,
-  //       lng
-  //     }
-  //   })
-  // }
 
   static defaultProps = {
     zoom: 18
   };
 
-  componentDidMount () {
-    console.log('window ready:', window.google)
-  }
-
 
   render() {
-    console.log('props:', this.props)
-    // console.log('window:', window.google)
-    // console.log('react:', GoogleMapReact() )
     if (!location) return
     const { lat, lng } = location
 
@@ -116,31 +85,12 @@ class ContactUs extends Component {
           defaultCenter={{ lat, lng }}
           defaultZoom={this.props.zoom}
           options={this.createOptions}
-          // options={{
-          //   fullscreenControl:false,
-          //   zoomControl: false,
-          //   onLoaded: (google, map, marker) => {
-          //     console.log('google:', google)
-
-          //   }
-
-          // }}
-          onTilesLoaded={(googleMaps, map, marker) => {
-            // console.log('marker:', marker)
-            // console.log('map', map)
-            // console.log('googlemaps:', googleMaps)
-            // Set Marker animation
-            // marker.setAnimation(googleMaps.Animation.BOUNCE)
-          }}
-          // onTilesLoaded={() => { this.setState({opacity: 1})}}
-
         >
           <AnyReactComponent
             lat={lat}
             lng={lng}
             animation={2}
             other={this.props}
-            // text={'Kreyser Avrora'}
           />
         </GoogleMapReact>
         <div style={{

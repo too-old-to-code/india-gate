@@ -1,17 +1,40 @@
 import './food-menu.scss'
-import React from 'react'
+import React, {useState} from 'react'
 import classnames from 'classnames'
 import { useStaticQuery, graphql } from 'gatsby'
+import AnimateHeight from 'react-animate-height';
 
 
 const MenuSubsection = ({node}) => {
+  const [open, toggleOpen] = useState(false)
+
   return (
     <div key={node.id}>
-      <h4>{node.heading.value}</h4>
+      <h4
+        onClick={() => toggleOpen(!open)}
+        style={{
+          display: 'inline-block',
+          padding: '15px 10px',
+          background: 'orange',
+          color: 'white',
+          letterSpacing: '2px',
+          textTransform: 'uppercase',
+          boxShadow: '1px 1px 3px black',
+          width: '90%',
+          margin: '3px'
+        }}
+      >
+        {node.heading.value}
+      </h4>
       {
         node.items.value.map((item, index) => {
           return (
-            <MenuItem item={item} key={item.id} index={index}/>
+            <AnimateHeight
+              duration={ 300 }
+              height={ open ? 'auto' : 0} // see props documentation bellow
+            >
+              <MenuItem item={item} key={item.id} index={index}/>
+            </AnimateHeight>
           )
         })
       }
